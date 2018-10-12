@@ -1,8 +1,8 @@
 <template>
   <section class="profile">
+    <TopHeader title="我的"/>
 
-      <TopHeader title="我的"/>
-    <section class="profile-number" @click="$router.push('./login')">
+    <section class="profile-number" @click="$router.push('/login')">
       <a href="javascript:" class="profile-link">
         <div class="profile_image">
           <i class="iconfont icon-person"></i>
@@ -96,14 +96,14 @@
     data() {
       return {}
     }
-
   }
-
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
+
   .profile //我的
     width 100%
+    overflow hidden
     .profile-number
       margin-top 45.5px
       .profile-link
@@ -232,5 +232,4 @@
             .icon-jiantou1
               color #bbb
               font-size 10px
-
 </style>

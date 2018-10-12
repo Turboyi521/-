@@ -10,7 +10,8 @@ import {
 import {
   RECEIVE_SHOPS,
   RECEIVE_CATEGORYS,
-  RECEIVE_ADDRESS
+  RECEIVE_ADDRESS,
+  RECEIVE_USER
 } from './mutation-types'
 
 export default {
@@ -19,7 +20,7 @@ export default {
   async getAddress ({commit, state}) {
     // 发送ajax请求
     const {latitude, longitude} = state
-    const result = await reqAddress(latitude+','+longitude)
+    const result = await reqAddress(latitude+','+longitude)   // {code: 0, data: address}
     if(result.code===0) {
       const address = result.data
       // commit给mutation
@@ -30,9 +31,7 @@ export default {
   // 异步获取categorys
   async getCategorys ({commit}) {
     // 发送ajax请求
-    // debugger
     const result = await reqFoodCategorys()
-
     if(result.code===0) {
       const categorys = result.data
       // commit给mutation
@@ -52,4 +51,9 @@ export default {
       commit(RECEIVE_SHOPS, {shops})
     }
   },
+
+  // 同步保存用户的action
+  saveUser ({commit}, user) {
+    commit(RECEIVE_USER, {user})
+  }
 }

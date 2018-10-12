@@ -1,50 +1,29 @@
 <template>
-    <div>
-      <router-view/>
-      <FooterGuide v-if="$route.meta.showFooter"/>
-    </div>
+  <div id="app">
+    <router-view/>
+    <FooterGuide v-if="$route.meta.showFooter"/>
+  </div>
 </template>
+
 <script>
-  import  FooterGuide from './components/FooterGuide/FooterGuide.vue'
+  import FooterGuide from './components/FooterGuide/FooterGuide.vue'
+
+
   export default {
-    mounted(){
-      //异步获取address,并保存到staten
+
+    mounted () {
+      // 异步获取address, 并保存到state
       this.$store.dispatch('getAddress')
     },
-    components:{
+
+    components: {
       FooterGuide
     }
-
-
   }
-
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
-  .header //头部公共css
-    background-color #02a774
-    position fixed
-    z-index 100
-    left 0
-    top 0
+
+<style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
+  #app
     width 100%
-    height 45px
-    .header_search
-      position absolute
-      left 15px
-      top 50%
-      transform translateY(-50%)
-      width 10%
-      height 50%
-      .iconfont
-        font-size 22px
-        color #fff
-    .header_title
-      position absolute
-      top 50%
-      left 50%
-      transform translate(-50%, -50%)
-      width 30%
-      color #fff
-      font-size 22px
-      text-align center
+    height 100%
 </style>

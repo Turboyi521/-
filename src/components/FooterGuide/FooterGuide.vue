@@ -1,24 +1,24 @@
 <template>
   <footer class="footer_guide border-1px">
-    <span  class="guide_item " @click="goTo('/msite')":class="{on:$route.path==='/msite'}">
+    <span class="guide_item" @click="goTo('/msite')" :class="{on: $route.path==='/msite'}">
       <span class="item_icon">
         <i class="iconfont icon-waimai"></i>
       </span>
       <span>外卖</span>
     </span>
-    <a href="javascript:;" class="guide_item" @click="goTo('/search')":class="{on:$route.path==='/search'}">
+    <a href="javascript:;" class="guide_item" @click="goTo('/search')" :class="{on: $route.path==='/search'}">
       <span class="item_icon">
         <i class="iconfont icon-search"></i>
       </span>
       <span>搜索</span>
     </a>
-    <a href="javascript:;" class="guide_item" @click="goTo('/order')":class="{on:$route.path==='/order'}" >
+    <a href="javascript:;" class="guide_item" @click="goTo('/order')" :class="{on: $route.path==='/order'}">
       <span class="item_icon">
         <i class="iconfont icon-dingdan"></i>
       </span>
       <span>订单</span>
     </a>
-    <a href="javascript:;" class="guide_item" @click="goTo('/profile')">
+    <a href="javascript:;" class="guide_item" @click="goTo('/profile')" :class="{on: $route.path==='/profile'}">
       <span class="item_icon">
         <i class="iconfont icon-geren"></i>
       </span>
@@ -28,19 +28,17 @@
 </template>
 <script>
   export default {
-    methods:{
+    methods: {
       goTo (path) {
-        //通过路由导航跳转路由
+        // 通过路由导航跳转路由
         this.$router.replace(path)
-
       }
     }
-
   }
-
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
+
   .footer_guide  //footer
     top-border-1px(#e4e4e4)
     position fixed
@@ -68,5 +66,4 @@
         margin-bottom 2px
         .iconfont
           font-size 22px
-
 </style>

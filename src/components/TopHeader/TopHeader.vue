@@ -1,20 +1,18 @@
 <template>
   <header class="header">
     <slot name="left"></slot>
-    <a class="header_title">
+    <span class="header_title">
       <span class="header_title_text ellipsis">{{title}}</span>
-    </a>
+    </span>
     <slot name="right"></slot>
   </header>
 </template>
 <script>
   export default {
-    props:{
-      title:String
+    props: {
+      title: String
     }
-
   }
-
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .header
@@ -35,7 +33,7 @@
       .icon-sousuo
         font-size 25px
         color #fff
-    .header
+    .header_title
       position absolute
       top 50%
       left 50%
@@ -43,7 +41,6 @@
       width 50%
       color #fff
       text-align center
-      margin-left -5%
       .header_title_text
         font-size 20px
         color #fff
