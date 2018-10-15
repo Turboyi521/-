@@ -37,3 +37,13 @@ export const reqSmsLogin = (phone, code) => ajax('/api/login_sms', {phone, code}
  */
 export const reqUser = () => ajax('/api/userinfo')
 
+/**
+ * 退出登陆
+ */
+export const reqLogout = () => ajax('/api/logout')
+
+
+export const reqGoods = () => ajax('/goods')
+export const reqRatings = () => ajax('/ratings')
+export const reqInfo = () => ajax('/info')
+
